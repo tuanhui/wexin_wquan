@@ -1,0 +1,39 @@
+swiper,swiper-item {
+  height: 213rpx;
+  display: flex;
+}
+.pic {
+  border-radius: 20rpx;
+  flex:1;
+  height: 100%;
+  box-sizing: border-box;
+  border: 10rpx solid #fff;
+}
+.guess-circles {
+  width: 100%;
+  display: flex;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  flex-direction:row;
+} 
+.guess-circles-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.guess-circles-item-pic {
+  width: 90rpx;
+  display: block;
+  border-radius: 8rpx;
+  align-self: center;
+  height: 90rpx;
+}
+.guess-circles-item-text {
+  height: 30rpx;
+  line-height: 30rpx; 
+  overflow-y: hidden;
+  margin-top: 10rpx;
+  display: block;
+  font-size: 24rpx;
+  text-align: center;
+}

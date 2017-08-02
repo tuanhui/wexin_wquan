@@ -1,0 +1,11 @@
+<view class="page">
+    <view class="title">{{current}}/{{total}}</view>
+    <scroll-view class="sv-content" scroll-x="{{true}}">
+        <view class="content">
+            <block wx:for="{{imgs}}" wx:key="*this" wx:for-item="img">
+                <image mode="aspectFit" src="{{img.url}}" mode="aspectFill" class="preview-img">
+                </image>
+            </block>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/news_list/news_list",
+    "pages/img_preview/img_preview",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "hello world!!",
+    "navigationBarTextStyle":"black"
+  }
+}

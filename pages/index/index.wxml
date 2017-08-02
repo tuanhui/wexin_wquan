@@ -1,0 +1,25 @@
+<swiper indicator-dots="{{true}}" indicator-color="rgba(110,110,110,.5)" indicator-active-color="#fff" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}">
+    <block wx:for="{{ads}}" wx:for-item="item" wx:key="*this">
+    <swiper-item>
+        <image src="{{item.pic}}" class="pic" mode="aspectFill"></image>
+    </swiper-item>
+    </block>
+</swiper>
+<view class="guess-circles">
+    <block wx:for="{{guess_circles}}" wx:key="*this" wx:for-item="item">
+    <view class="guess-circles-item" data-circle-id="{{item.circle_id}}" bindtap="intoCircle">
+        <image class="guess-circles-item-pic" src="{{item.circle_pic}}"></image>
+         <text class="guess-circles-item-text">{{item.circle_name}}</text>
+    </view>
+    </block>
+</view>
+<view class="hot-news">
+      <text class="hot-news-title"></text>
+      <view class="hot-news-content">
+          <image class="hot-news-icon" src="{{}}"></image>
+          <text></text>
+      </view>
+      <view class="hot-news-next">
+          <image class="hot-news-icon" src="{{}}"></image>
+      </view>
+</view>

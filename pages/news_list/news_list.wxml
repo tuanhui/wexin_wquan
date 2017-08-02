@@ -1,0 +1,101 @@
+<scroll-view style="height:{{screenH}}px;" scroll-y="{{true}}"
+    lower-threshold="50" bindscrolltolower="lower">
+    <view class="page">
+      <view class="header">
+          <image src="{{newsInfo.circle_pic}}" class="header-circle-bg"></image>
+          <view class="header-user"></view>
+              <image src="{{newsInfo.circle_card_avatar}}" 
+                          class="header-user-avatar"></image>
+              <text class="header-user-name">{{newsInfo.circle_card_name}}</text>
+      </view>
+      <view class="news-list">
+          <view class="news-item" wx:for="{{news}}" 
+                wx:key="*this" wx:for-item="news" wx:for-index="idx">
+                <view class="news-item-header">
+                    <image class="news-item-header-avatar" 
+                          src="{{news.avatar}}">
+                    </image>
+                    <view class="news-item-header-t">
+                        <view class="news-item-header-nickname">
+                        {{news.nick_name}}
+                        </view>
+                        <image class="news-item-header-sex" 
+                                src="{{'../../res/hot_male.png'}}">
+                        </image>
+                        <view class="news-item-header-level">
+                        {{news.circle_level}}
+                        </view>
+                    </view>
+                    <view class="news-item-header-time">
+                    {{news.update_time}}
+                    </view>
+                    <view class="news-item-header-chat">
+                        <image src="{{}}"></image>
+                        <view>私聊</view>
+                    </view>
+                </view>
+                <view class="news-item-content">
+                    <view class="news-item-content-text">
+                        {{news.content}}
+                    </view>
+                    <view class="news-item-content-imgs">
+                        <block wx:for="{{news.pic}}" 
+                              wx:key="*this" wx:for-item="item">
+                              <image bindtap="previewImgs" 
+                                      data-news-id="{{idx}}" 
+                                      data-current="{{index+1}}"
+                                      data-total="{{news.pic.length}}"
+                                      src="{{item.url}}"
+                                  wx:if="{{news.pic.length > 0}}" 
+                                style="width: {{news.pic.length < 3 ? (screenW-20)/news.pic.length : (screenW-20)/3}}px; height: {{news.pic.length < 3 ? (screenW-20)/news.pic.length : (screenW-20)/3}}px;
+                                >
+                                </image>
+                        </block>
+                    </view>
+                    <view class="operate">
+                        <view class="operate-item fl" >  
+                            <view class="operate-item-content">
+                                <image mode="aspectFill" 
+                                      src="{{'../../res/retransmission.png'}}" 
+                                      class="operate-item-img">
+                                </image>
+                                <view class="operate-item-text">转发</view>
+                            </view>
+                        </view>
+                        <view class="operate-item" >  
+                            <view class="operate-item-content">
+                                <image mode="aspectFill" 
+                                      src="{{'../../res/write.png'}}" 
+                                      class="operate-item-img">
+                                </image>
+                                <view class="operate-item-text">评论</view>
+                            </view>
+                        </view>
+                        <view class="operate-item" >  
+                            <view class="operate-item-content">
+                                <image mode="aspectFill" 
+                                      src="{{'../../res/praise.png'}}" 
+                                      class="operate-item-img">
+                                </image>
+                                <view class="operate-item-text">赞</view>
+                            </view>
+                        </view>
+                        <view class="operate-item fr" >  
+                            <view class="operate-item-content">
+                                <image mode="aspectFill" 
+                                      src="{{'../../res/list_menu.png'}}" 
+                                      class="operate-item-img">
+                                </image>
+                                <view class="operate-item-text">更多</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+          </view>
+      </view>
+    </view>
+    <view class="weui-loadmore" wx:if="{{loading_more}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+</scroll-view>
